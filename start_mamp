@@ -1,0 +1,4 @@
+#bin/bash
+stop_mamp
+kill-all-mysql
+/Applications/MAMP/bin/start.sh
