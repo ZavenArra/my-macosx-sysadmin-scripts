@@ -1,0 +1,50 @@
+Note: Free Accounts cannot share a track to multiple groups.
+Allmost all users on soundcloud know that problem.
+You want to share your tracks in all of your groups (hundreds and tousends), BUT you must click on every group to share the track with.
+So your weekend job is clicking all the day on boring links. Not any more.
+I found a easy to use solution for you. Run a little script and you share a track within 10 seconds to hundreds of groups.
+Listen fine?!?, yeah dude it is.
+
+So just read this few steps and a little video about to do it.
+
+1. You need the script
+// 1. Open Share To Group Button for the track you want to share
+// 2. Edit group name match - between the // put in what name must match
+// watch out, it matches every group that CONTAINS "electro", no matter if this a word or
+// a part of a word and its case insensitive
+// google for javascript regex syntax to get more informed about the hints of the match
+// 3. After you pushed "Execute" or "Ausführen" for german peoples
+var groupNameMatch = /.*/i;
+
+var i = 1;
+
+$(".create-group").each(function(){
+
+if($(this).attr("href").match(/contributions/i) && $(this).text().match(groupNameMatch)){
+
+    // soundcloud allows only 75 groups to share
+
+        if(i > 75) return false;
+
+            $(this).trigger("click");
+
+                i++;
+
+                }
+
+                });
+
+
+                2. Open your track you want to share in your groups.
+                3. Click on the "Share to Group" button in the Player.
+                4. In my example i use firefox and the firebug extensions. You can use every browser that supports development console scripting. (Chrome, Safari).
+                5. Put in the code in the console, modify the matching keyword - the groups in very you want to share the track.
+                6. Run the script (click on execute or something other to run the script).
+                7. Now you can see the popping out notifications for all accomplished group shares. Wait until the messages pops out, when no more notifications visible the process is done.
+
+                TIP: For remove your tracks from groups again replace the first line $(".create-group").each(function(){ with $(".remove-group").each(function(){
+
+                Thats it. Group Share with style ;-)
+                Share this Tutorial with all your friends who need that.
+
+                So at least the video for all people who dont want read :-)

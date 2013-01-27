@@ -1,0 +1,7 @@
+convert -size 2000x2400 canvas:white  canvas_black.tif
+convert 7-31.tif canvas_black.tif -composite convert_over.tif
+convert 7-31.tif -gravity center -crop 2000x2400-0-0\! -background skyblue -flatten crop_viewport.tiff
+convert 7-31.tif -gravity center -crop 2000x2400-0-0\! -background black -flatten crop_viewport.tiff
+
+[Autumn] $ identify -format "%w" 7-31.tif 
+[Autumn] $ identify -format "%h" 7-31.tif 
